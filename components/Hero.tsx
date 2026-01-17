@@ -1,17 +1,34 @@
 import React from 'react';
 import { AUTHORS, AFFILIATIONS, LINKS, PROJECT_INFO, IMAGES } from '../constants';
-import { Github, FileText, PlayCircle } from 'lucide-react';
+import { Github, FileText } from 'lucide-react';
 
 export const Hero: React.FC = () => {
+  const isPdf = IMAGES.teaser.toLowerCase().endsWith('.pdf');
+
   return (
     <section className="pt-10 pb-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
       {/* Overview Image inserted before title */}
       <div className="mb-8 flex justify-center">
-        <img
-          src={IMAGES.teaser}
-          alt="Project Overview"
-          className="rounded-xl shadow-sm border border-gray-100 w-full h-auto object-contain transition-all duration-500 ease-in-out transform hover:scale-105 hover:shadow-2xl cursor-pointer"
-        />
+        <div className="w-full transition-all duration-500 ease-in-out transform hover:scale-105 hover:shadow-2xl cursor-pointer rounded-xl overflow-hidden border border-gray-100 shadow-sm bg-white">
+          {isPdf ? (
+            <div className="relative w-full h-[500px] sm:h-[600px]">
+              {/* PDF Embed */}
+              <embed
+                src={IMAGES.teaser}
+                type="application/pdf"
+                className="w-full h-full"
+              />
+              {/* Transparent Overlay to capture mouse events for the hover scaling effect */}
+              <div className="absolute inset-0 bg-transparent" />
+            </div>
+          ) : (
+            <img
+              src={IMAGES.teaser}
+              alt="Project Overview"
+              className="w-full h-auto object-contain"
+            />
+          )}
+        </div>
       </div>
 
       <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-6">

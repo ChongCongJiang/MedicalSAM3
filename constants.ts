@@ -31,10 +31,10 @@ export const AFFILIATIONS = [
 
 export const IMAGES = {
   // Use your project overview/teaser image here
-  teaser: "/MedicalSAM3/overview.png",
+  teaser: "/MedicalSAM3/overview.svg",
 
   // PLACEHOLDER: Replace this URL with the actual path to your qualitative comparison figure (e.g., "/assets/figure4.png")
-  qualitativeComparison: "/MedicalSAM3/result.png",
+  qualitativeComparison: "/MedicalSAM3/result.svg",
 
   // PLACEHOLDER: Replace this URL with the actual path to your methodology figure
   methodology: "/MedicalSAM3/method.png",
