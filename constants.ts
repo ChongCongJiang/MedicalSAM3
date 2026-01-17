@@ -36,6 +36,9 @@ export const IMAGES = {
   // PLACEHOLDER: Replace this URL with the actual path to your qualitative comparison figure (e.g., "/assets/figure4.png")
   qualitativeComparison: "/MedicalSAM3/result.png",
 
+  // PLACEHOLDER: Replace this URL with the actual path to your methodology figure
+  methodology: "/MedicalSAM3/method.png",
+
   visuals: {
     row1: "https://picsum.photos/seed/v1/200",
     row2: "https://picsum.photos/seed/v2/200",
