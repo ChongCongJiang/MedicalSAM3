@@ -4,7 +4,7 @@ export const PROJECT_INFO = {
   title: "Medical SAM3",
   subtitle: "A Foundation Model for Universal Prompt-Driven Medical Image Segmentation",
   abstractTitle: "Abstract",
-  methodologyTitle: "Universal Prompt-Driven Segmentation"
+  methodologyTitle: "Methodology"
 };
 
 export const AUTHORS: Author[] = [
@@ -30,21 +30,77 @@ export const AFFILIATIONS = [
 ];
 
 export const IMAGES = {
-  // Use your project overview/teaser image here
-  teaser: "/MedicalSAM3/overview.svg",
-
-  // PLACEHOLDER: Replace this URL with the actual path to your qualitative comparison figure (e.g., "/assets/figure4.png")
-  qualitativeComparison: "/MedicalSAM3/result.svg",
-
-  // PLACEHOLDER: Replace this URL with the actual path to your methodology figure
-  methodology: "/MedicalSAM3/method.svg",
-
-  visuals: {
-    row1: "https://picsum.photos/seed/v1/200",
-    row2: "https://picsum.photos/seed/v2/200",
-    row3: "https://picsum.photos/seed/v3/200",
-  }
+  // RECOMMENDED: Use SVG files for best quality.
+  // Example: "./assets/teaser.svg" OR "./assets/method.pdf"
+  // If using PDF, the app will automatically detect the .pdf extension and embed it differently.
+  teaser: "https://picsum.photos/seed/teaser/800/400",
+  methodology: "https://picsum.photos/seed/methodology/1200/600",
 };
+
+// Data for Interactive Visuals Comparison
+// Mapped to local public/result folder structure
+export const VISUAL_SCENARIOS = [
+  {
+    id: 'vessel',
+    label: 'DRIVE',
+    images: {
+      raw: "/MedicalSAM3/result/DRIVE/original.png",
+      gt: "/MedicalSAM3/result/DRIVE/gt.png",
+      sam3: "/MedicalSAM3/result/DRIVE/sam3.png",
+      medsam3: "/MedicalSAM3/result/DRIVE/ours.png"
+    }
+  },
+  {
+    id: 'disc',
+    label: 'COph100',
+    images: {
+      raw: "/MedicalSAM3/result/COph100/original.png",
+      gt: "/MedicalSAM3/result/COph100/gt.png",
+      sam3: "/MedicalSAM3/result/COph100/sam3.png",
+      medsam3: "/MedicalSAM3/result/COph100/ours.png"
+    }
+  },
+  {
+    id: 'instrument',
+    label: 'M2CAI',
+    images: {
+      raw: "/MedicalSAM3/result/M2CAI/original.png",
+      gt: "/MedicalSAM3/result/M2CAI/gt.png",
+      sam3: "/MedicalSAM3/result/M2CAI/sam3.png",
+      medsam3: "/MedicalSAM3/result/M2CAI/ours.png"
+    }
+  },
+  {
+    id: 'polyp',
+    label: 'PS-FH-AOP',
+    images: {
+      raw: "/MedicalSAM3/result/PS-FH-AOP/original.png",
+      gt: "/MedicalSAM3/result/PS-FH-AOP/gt.png",
+      sam3: "/MedicalSAM3/result/PS-FH-AOP/sam3.png",
+      medsam3: "/MedicalSAM3/result/PS-FH-AOP/ours.png"
+    }
+  },
+  {
+    id: 'fluid',
+    label: 'Intraretinal Fluid',
+    images: {
+      raw: "/MedicalSAM3/result/Intraretinal_Fluid/original.png",
+      gt: "/MedicalSAM3/result/Intraretinal_Fluid/gt.png",
+      sam3: "/MedicalSAM3/result/Intraretinal_Fluid/sam3.png",
+      medsam3: "/MedicalSAM3/result/Intraretinal_Fluid/ours.png"
+    }
+  },
+  {
+    id: 'fetoplac',
+    label: 'FetoPlac',
+    images: {
+      raw: "/MedicalSAM3/result/FetoPlac/original.png",
+      gt: "/MedicalSAM3/result/FetoPlac/gt.png",
+      sam3: "/MedicalSAM3/result/FetoPlac/sam3.png",
+      medsam3: "/MedicalSAM3/result/FetoPlac/ours.png"
+    }
+  }
+];
 
 // Internal Validation Data (Strictly from Table 3)
 export const INTERNAL_DATA: MetricData[] = [
@@ -81,5 +137,5 @@ export const BIBTEX = `@article{jiang2025medical,
   title={Medical SAM3: A Foundation Model for Universal Prompt-Driven Medical Image Segmentation},
   author={Jiang, Chongcong and Ding, Tianxingjian and Song, Chuhan and Tu, Jiachen and Yan, Ziyang and Shao, Yihua and Wang, Zhenyi and Shang, Yuzhang and Han, Tianyu and Tian, Yu},
   journal={arXiv preprint},
-  year={2025}
+  year={2026}
 }`;
