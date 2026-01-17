@@ -30,9 +30,9 @@ export const AFFILIATIONS = [
 ];
 
 export const IMAGES = {
-  // Replace these URLs with your actual paper figures/screenshots
-  // You can upload images to the 'public' folder or an assets folder in your repo
-  teaser: "https://picsum.photos/seed/teaser/800/400", 
+  // This 'teaser' image will now be displayed at the very top of the page (before the title).
+  // Replace this URL with your project's overview diagram or main banner.
+  teaser: "./assets/overview.png",
   visuals: {
     row1: "https://picsum.photos/seed/v1/200",
     row2: "https://picsum.photos/seed/v2/200",

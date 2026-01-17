@@ -1,10 +1,19 @@
 import React from 'react';
-import { AUTHORS, AFFILIATIONS, LINKS, PROJECT_INFO } from '../constants';
+import { AUTHORS, AFFILIATIONS, LINKS, PROJECT_INFO, IMAGES } from '../constants';
 import { Github, FileText, PlayCircle } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="pt-20 pb-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+    <section className="pt-10 pb-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+      {/* Overview Image inserted before title */}
+      <div className="mb-8 flex justify-center">
+        <img
+          src={IMAGES.teaser}
+          alt="Project Overview"
+          className="rounded-xl shadow-sm border border-gray-100 max-w-full h-auto max-h-[300px] object-contain"
+        />
+      </div>
+
       <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-6">
         <span className="text-brand-600">{PROJECT_INFO.title}</span>: {PROJECT_INFO.subtitle}
       </h1>
@@ -21,7 +30,7 @@ export const Hero: React.FC = () => {
             </span>
           ))}
         </div>
-        
+
         <div className="text-sm text-gray-500 space-y-1">
           {AFFILIATIONS.map((aff, idx) => (
             <div key={idx}>{aff}</div>
@@ -33,15 +42,15 @@ export const Hero: React.FC = () => {
       </div>
 
       <div className="flex justify-center gap-4">
-        <a 
-          href={LINKS.paper} 
+        <a
+          href={LINKS.paper}
           className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-gray-900 hover:bg-gray-800 transition-colors"
         >
           <FileText className="mr-2 h-5 w-5" />
           Paper
         </a>
-        <a 
-          href={LINKS.code} 
+        <a
+          href={LINKS.code}
           className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-brand-600 hover:bg-brand-700 transition-colors"
         >
           <Github className="mr-2 h-5 w-5" />
