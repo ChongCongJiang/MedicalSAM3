@@ -133,7 +133,7 @@ export const LINKS = {
   demo: "#", // Replace with HuggingFace/Colab demo link if available
 };
 
-export const BIBTEX = `@article{jiang2025medical,
+export const BIBTEX = `@article{jiang2026medicalsam3,
   title={Medical SAM3: A Foundation Model for Universal Prompt-Driven Medical Image Segmentation},
   author={Jiang, Chongcong and Ding, Tianxingjian and Song, Chuhan and Tu, Jiachen and Yan, Ziyang and Shao, Yihua and Wang, Zhenyi and Shang, Yuzhang and Han, Tianyu and Tian, Yu},
   journal={arXiv preprint},
