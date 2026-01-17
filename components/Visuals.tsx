@@ -9,7 +9,7 @@ export const Visuals: React.FC = () => {
   const activeScenario = VISUAL_SCENARIOS.find(s => s.id === activeId) || VISUAL_SCENARIOS[0];
 
   return (
-    <section className="py-20 bg-white border-t border-gray-100" id="visuals">
+    <section className="py-12 bg-white" id="visuals">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold mb-10 text-center text-gray-900">Qualitative Comparison</h2>
 
