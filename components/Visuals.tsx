@@ -1,101 +1,121 @@
 import React, { useState } from 'react';
 import { VISUAL_SCENARIOS } from '../constants';
+import { CheckCircle2 } from 'lucide-react';
 
 export const Visuals: React.FC = () => {
-  // Default to the middle one expanded for balance
-  const [activeId, setActiveId] = useState<string>(VISUAL_SCENARIOS[2].id);
+  const [activeId, setActiveId] = useState<string>(VISUAL_SCENARIOS[0].id);
+
+  // Find the currently active scenario data
+  const activeScenario = VISUAL_SCENARIOS.find(s => s.id === activeId) || VISUAL_SCENARIOS[0];
 
   return (
-    <section className="py-20 bg-white border-t border-gray-100 overflow-hidden">
+    <section className="py-20 bg-white border-t border-gray-100" id="visuals">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold mb-6 text-center text-gray-900">Qualitative Comparison</h2>
-        {/* Description text removed */}
-        <div className="mb-12"></div>
+        <h2 className="text-4xl font-bold mb-10 text-center text-gray-900">Qualitative Comparison</h2>
 
-        {/* EXPANDING IMAGE GALLERY */}
-        <div className="flex flex-col lg:flex-row h-[800px] w-full gap-3">
+        {/* 1. TAB NAVIGATION */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
           {VISUAL_SCENARIOS.map((scenario) => {
             const isActive = activeId === scenario.id;
-
             return (
-              <div
+              <button
                 key={scenario.id}
-                onMouseEnter={() => setActiveId(scenario.id)}
+                onClick={() => setActiveId(scenario.id)}
                 className={`
-                  relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] border
+                  px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 border
                   ${isActive 
-                    ? 'lg:flex-[4] flex-[4] bg-white border-gray-200 shadow-2xl ring-1 ring-gray-100' 
-                    : 'lg:flex-[0.5] flex-[1] bg-gray-50 border-gray-200 hover:bg-gray-100'}
+                    ? 'bg-brand-600 text-white border-brand-600 shadow-md transform scale-105' 
+                    : 'bg-white text-gray-600 border-gray-200 hover:border-brand-300 hover:bg-gray-50'}
                 `}
               >
-                {/* ACTIVE STATE: FULL GRID COMPARISON */}
-                {isActive && (
-                  <div className="absolute inset-0 p-6 flex flex-col animate-fade-in">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                      <span className="w-1.5 h-8 bg-brand-600 rounded mr-3"></span>
-                      {scenario.label}
-                    </h3>
-
-                    <div className="flex-1 grid grid-cols-2 gap-6 h-full min-h-0">
-
-                      {/* Original */}
-                      <div className="flex flex-col h-full min-h-0">
-                        <div className="relative flex-1 rounded-t-xl overflow-hidden border border-gray-200 border-b-0 group">
-                          <img src={scenario.images.raw} alt="Raw" className="w-full h-full object-cover" />
-                        </div>
-                        <div className="bg-gray-50 border border-gray-200 rounded-b-xl p-3 text-center text-sm font-semibold text-gray-700">
-                          Input Image
-                        </div>
-                      </div>
-
-                      {/* GT */}
-                      <div className="flex flex-col h-full min-h-0">
-                        <div className="relative flex-1 rounded-t-xl overflow-hidden border border-gray-200 border-b-0 group">
-                          <img src={scenario.images.gt} alt="GT" className="w-full h-full object-cover" />
-                        </div>
-                        <div className="bg-green-50 border border-green-100 rounded-b-xl p-3 text-center text-sm font-semibold text-green-700">
-                          Ground Truth
-                        </div>
-                      </div>
-
-                      {/* SAM 3 */}
-                      <div className="flex flex-col h-full min-h-0">
-                        <div className="relative flex-1 rounded-t-xl overflow-hidden border border-red-100 border-b-0 group bg-gray-100">
-                          <img src={scenario.images.sam3} alt="SAM3" className="w-full h-full object-cover grayscale opacity-90" />
-                        </div>
-                        <div className="bg-red-50 border border-red-100 rounded-b-xl p-3 text-center text-sm font-semibold text-red-700">
-                          SAM 3
-                        </div>
-                      </div>
-
-                      {/* Medical SAM3 */}
-                      <div className="flex flex-col h-full min-h-0 shadow-lg shadow-brand-100/50 rounded-xl">
-                        <div className="relative flex-1 rounded-t-xl overflow-hidden border-2 border-brand-500 border-b-0 group">
-                          <img src={scenario.images.medsam3} alt="Medical SAM3" className="w-full h-full object-cover" />
-                          <div className="absolute top-3 right-3 bg-brand-600 text-white text-xs px-3 py-1 rounded-full font-bold shadow-md">
-                            OURS
-                          </div>
-                        </div>
-                        <div className="bg-brand-600 border-2 border-brand-600 rounded-b-xl p-3 text-center text-sm font-bold text-white">
-                          Medical SAM3
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                )}
-
-                {/* INACTIVE STATE: VERTICAL LABEL */}
-                {!isActive && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-xl font-bold text-gray-400 tracking-widest uppercase [writing-mode:vertical-rl] rotate-180 whitespace-nowrap group-hover:text-gray-600 transition-colors">
-                      {scenario.label}
-                    </span>
-                  </div>
-                )}
-              </div>
+                {scenario.label}
+              </button>
             );
           })}
+        </div>
+
+        {/* 2. IMAGE GALLERY DISPLAY */}
+        <div className="animate-fade-in">
+          {/* Header for the current scenario */}
+          <div className="flex items-center justify-between mb-6 px-2">
+            <h3 className="text-2xl font-bold text-gray-900 flex items-center">
+              <span className="w-2 h-8 bg-brand-600 rounded mr-3"></span>
+              {activeScenario.label}
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            {/* COLUMN 1: INPUT */}
+            <div className="group flex flex-col">
+              <div className="relative aspect-square rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+                <img
+                  src={activeScenario.images.raw}
+                  alt="Input"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="mt-4 text-center">
+                <span className="inline-block px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-semibold border border-gray-200">
+                  Input Image
+                </span>
+              </div>
+            </div>
+
+            {/* COLUMN 2: GT */}
+            <div className="group flex flex-col">
+              <div className="relative aspect-square rounded-2xl overflow-hidden border border-green-200 shadow-sm bg-green-50/30">
+                <img
+                  src={activeScenario.images.gt}
+                  alt="Ground Truth"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="mt-4 text-center">
+                <span className="inline-flex items-center px-3 py-1 rounded-full bg-green-50 text-green-700 text-sm font-semibold border border-green-200">
+                  <CheckCircle2 className="w-3.5 h-3.5 mr-1.5" />
+                  Ground Truth
+                </span>
+              </div>
+            </div>
+
+            {/* COLUMN 3: SAM 3 */}
+            <div className="group flex flex-col opacity-90 hover:opacity-100 transition-opacity">
+              <div className="relative aspect-square rounded-2xl overflow-hidden border border-red-200 shadow-sm bg-red-50/30 grayscale-[20%]">
+                <img
+                  src={activeScenario.images.sam3}
+                  alt="SAM 3"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="mt-4 text-center">
+                <span className="inline-block px-3 py-1 rounded-full bg-red-50 text-red-700 text-sm font-semibold border border-red-200">
+                  SAM 3
+                </span>
+              </div>
+            </div>
+
+            {/* COLUMN 4: OURS (Highlighted) */}
+            <div className="group flex flex-col relative z-10">
+              <div className="absolute -inset-0.5 bg-gradient-to-b from-brand-400 to-brand-600 rounded-[18px] opacity-20 group-hover:opacity-40 blur transition duration-500"></div>
+              <div className="relative aspect-square rounded-2xl overflow-hidden border-2 border-brand-500 shadow-xl bg-white">
+                <img
+                  src={activeScenario.images.medsam3}
+                  alt="Medical SAM3"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute top-3 right-3 bg-brand-600 text-white text-xs px-3 py-1 rounded-full font-bold shadow-lg tracking-wide">
+                  OURS
+                </div>
+              </div>
+              <div className="mt-4 text-center">
+                <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-brand-600 text-white text-sm font-bold shadow-md shadow-brand-200">
+                  Medical SAM3
+                </span>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
