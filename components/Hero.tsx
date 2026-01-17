@@ -1,6 +1,6 @@
 import React from 'react';
 import { AUTHORS, AFFILIATIONS, LINKS, PROJECT_INFO, IMAGES } from '../constants';
-import { Github, FileText, Play } from 'lucide-react';
+import { Github, FileText, MonitorPlay } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   const isPdf = IMAGES.teaser.toLowerCase().endsWith('.pdf');
@@ -82,7 +82,7 @@ export const Hero: React.FC = () => {
           href={LINKS.demo}
           className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition-colors"
         >
-          <Play className="mr-2 h-5 w-5" />
+          <MonitorPlay className="mr-2 h-5 w-5" />
           Demo
         </a>
       </div>
