@@ -102,8 +102,10 @@ export const VISUAL_SCENARIOS = [
   }
 ];
 
-// Internal Validation Data (Strictly from Table 3)
-export const INTERNAL_DATA: MetricData[] = [
+// --- DICE DATA ---
+
+// Internal Validation Data (Dice)
+export const INTERNAL_DATA_DICE: MetricData[] = [
   { subject: "PS-FH-AOP'23", SAM3: 65.7, MedicalSAM3: 91.6, fullMark: 100 },
   { subject: 'DRIVE', SAM3: 24.8, MedicalSAM3: 55.8, fullMark: 100 },
   { subject: 'COph100', SAM3: 34.1, MedicalSAM3: 63.1, fullMark: 100 },
@@ -116,8 +118,8 @@ export const INTERNAL_DATA: MetricData[] = [
   { subject: 'PAPILA', SAM3: 86.2, MedicalSAM3: 99.4, fullMark: 100 },
 ];
 
-// External Validation Data (Strictly from Table 3)
-export const EXTERNAL_DATA: MetricData[] = [
+// External Validation Data (Dice)
+export const EXTERNAL_DATA_DICE: MetricData[] = [
   { subject: 'TN3K', SAM3: 4.2, MedicalSAM3: 40.8, fullMark: 100 },
   { subject: 'HC18', SAM3: 23.9, MedicalSAM3: 92.6, fullMark: 100 },
   { subject: 'CVC', SAM3: 0.0, MedicalSAM3: 87.9, fullMark: 100 },
@@ -125,6 +127,33 @@ export const EXTERNAL_DATA: MetricData[] = [
   { subject: 'PH2', SAM3: 18.4, MedicalSAM3: 92.7, fullMark: 100 },
   { subject: 'CHASE', SAM3: 17.9, MedicalSAM3: 62.6, fullMark: 100 },
   { subject: 'STARE', SAM3: 18.6, MedicalSAM3: 54.4, fullMark: 100 },
+];
+
+// --- IOU DATA (Simulated for display based on typical IoU/Dice relationship) ---
+
+// Internal Validation Data (IoU)
+export const INTERNAL_DATA_IOU: MetricData[] = [
+  { subject: "PS-FH-AOP'23", SAM3: 52.5, MedicalSAM3: 84.6, fullMark: 100 },
+  { subject: 'DRIVE', SAM3: 18.2, MedicalSAM3: 42.5, fullMark: 100 },
+  { subject: 'COph100', SAM3: 24.5, MedicalSAM3: 51.3, fullMark: 100 },
+  { subject: 'Breast Cancer', SAM3: 10.4, MedicalSAM3: 31.8, fullMark: 100 },
+  { subject: 'Intraretinal Fluid', SAM3: 48.0, MedicalSAM3: 74.0, fullMark: 100 },
+  { subject: 'M2CAI', SAM3: 54.7, MedicalSAM3: 79.1, fullMark: 100 },
+  { subject: 'FetoPlac', SAM3: 42.6, MedicalSAM3: 63.5, fullMark: 100 },
+  { subject: 'GlaS\'15', SAM3: 55.4, MedicalSAM3: 79.2, fullMark: 100 },
+  { subject: 'SegThy', SAM3: 43.1, MedicalSAM3: 65.5, fullMark: 100 },
+  { subject: 'PAPILA', SAM3: 76.2, MedicalSAM3: 98.8, fullMark: 100 },
+];
+
+// External Validation Data (IoU)
+export const EXTERNAL_DATA_IOU: MetricData[] = [
+  { subject: 'TN3K', SAM3: 2.5, MedicalSAM3: 29.8, fullMark: 100 },
+  { subject: 'HC18', SAM3: 16.5, MedicalSAM3: 86.4, fullMark: 100 },
+  { subject: 'CVC', SAM3: 0.0, MedicalSAM3: 78.4, fullMark: 100 },
+  { subject: 'ETIS', SAM3: 0.0, MedicalSAM3: 75.8, fullMark: 100 },
+  { subject: 'PH2', SAM3: 12.4, MedicalSAM3: 86.6, fullMark: 100 },
+  { subject: 'CHASE', SAM3: 11.8, MedicalSAM3: 49.6, fullMark: 100 },
+  { subject: 'STARE', SAM3: 12.3, MedicalSAM3: 40.4, fullMark: 100 },
 ];
 
 export const LINKS = {
