@@ -21,7 +21,7 @@ export const Results: React.FC = () => {
   const avgExternalMedSam3 = calculateAvg(externalData, 'MedicalSAM3');
 
   return (
-    <section className="py-12 bg-white">
+    <section className="pb-12 pt-4 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* HEADER SECTION: Centered Title & Toggle (Moved OUTSIDE the box) */}
