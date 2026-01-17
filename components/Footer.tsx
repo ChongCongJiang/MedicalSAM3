@@ -1,4 +1,5 @@
 import React from 'react';
+import { LINKS } from '../constants';
 
 export const Footer: React.FC = () => {
   return (
@@ -11,9 +12,11 @@ export const Footer: React.FC = () => {
           The code and model weights are available for research purposes.
         </p>
         <div className="mt-4">
-           <a href="#" className="text-brand-600 hover:underline mx-2">Paper</a>
+           <a href={LINKS.paper} className="text-brand-600 hover:underline mx-2">Paper</a>
            &bull;
-           <a href="https://github.com/AIM-Research-Lab/Medical-SAM3" className="text-brand-600 hover:underline mx-2">GitHub</a>
+           <a href={LINKS.code} className="text-brand-600 hover:underline mx-2">Code</a>
+           &bull;
+           <a href={LINKS.demo} className="text-brand-600 hover:underline mx-2">Demo</a>
         </div>
       </div>
     </footer>
