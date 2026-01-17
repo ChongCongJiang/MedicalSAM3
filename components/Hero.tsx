@@ -31,8 +31,13 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-6">
-        <span className="text-brand-600">{PROJECT_INFO.title}</span>: {PROJECT_INFO.subtitle}
+      <h1 className="mb-8">
+        <span className="block text-5xl sm:text-6xl font-bold tracking-tight text-brand-600 mb-4">
+          {PROJECT_INFO.title}
+        </span>
+        <span className="block text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+          {PROJECT_INFO.subtitle}
+        </span>
       </h1>
 
       <div className="mb-8">
