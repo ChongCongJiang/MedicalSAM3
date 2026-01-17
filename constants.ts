@@ -32,7 +32,7 @@ export const AFFILIATIONS = [
 export const IMAGES = {
   // This 'teaser' image will now be displayed at the very top of the page (before the title).
   // Replace this URL with your project's overview diagram or main banner.
-  teaser: "/MedicalSAM3/overview.png",
+  teaser: "https://picsum.photos/seed/teaser/800/400",
   visuals: {
     row1: "https://picsum.photos/seed/v1/200",
     row2: "https://picsum.photos/seed/v2/200",
@@ -40,18 +40,29 @@ export const IMAGES = {
   }
 };
 
-// Extracted from Table 3 / Figure 3 of the paper (Internal Validation)
-export const RADAR_DATA_INTERNAL: MetricData[] = [
-  { subject: 'PS-FH-AOP', SAM3: 65.7, MedicalSAM3: 91.6, fullMark: 100 },
+// Internal Validation Data (Strictly from Table 3)
+export const INTERNAL_DATA: MetricData[] = [
+  { subject: "PS-FH-AOP'23", SAM3: 65.7, MedicalSAM3: 91.6, fullMark: 100 },
   { subject: 'DRIVE', SAM3: 24.8, MedicalSAM3: 55.8, fullMark: 100 },
   { subject: 'COph100', SAM3: 34.1, MedicalSAM3: 63.1, fullMark: 100 },
   { subject: 'Breast Cancer', SAM3: 16.3, MedicalSAM3: 43.8, fullMark: 100 },
-  { subject: 'Intraretinal', SAM3: 62.0, MedicalSAM3: 85.0, fullMark: 100 },
+  { subject: 'Intraretinal Fluid', SAM3: 62.0, MedicalSAM3: 85.0, fullMark: 100 },
   { subject: 'M2CAI', SAM3: 67.7, MedicalSAM3: 88.1, fullMark: 100 },
   { subject: 'FetoPlac', SAM3: 56.6, MedicalSAM3: 77.0, fullMark: 100 },
   { subject: 'GlaS\'15', SAM3: 68.9, MedicalSAM3: 88.2, fullMark: 100 },
   { subject: 'SegThy', SAM3: 57.3, MedicalSAM3: 78.5, fullMark: 100 },
   { subject: 'PAPILA', SAM3: 86.2, MedicalSAM3: 99.4, fullMark: 100 },
+];
+
+// External Validation Data (Strictly from Table 3)
+export const EXTERNAL_DATA: MetricData[] = [
+  { subject: 'TN3K', SAM3: 4.2, MedicalSAM3: 40.8, fullMark: 100 },
+  { subject: 'HC18', SAM3: 23.9, MedicalSAM3: 92.6, fullMark: 100 },
+  { subject: 'CVC', SAM3: 0.0, MedicalSAM3: 87.9, fullMark: 100 },
+  { subject: 'ETIS', SAM3: 0.0, MedicalSAM3: 86.1, fullMark: 100 },
+  { subject: 'PH2', SAM3: 18.4, MedicalSAM3: 92.7, fullMark: 100 },
+  { subject: 'CHASE', SAM3: 17.9, MedicalSAM3: 62.6, fullMark: 100 },
+  { subject: 'STARE', SAM3: 18.6, MedicalSAM3: 54.4, fullMark: 100 },
 ];
 
 export const LINKS = {

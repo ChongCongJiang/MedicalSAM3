@@ -1,85 +1,145 @@
 import React from 'react';
 import { ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Legend, Tooltip } from 'recharts';
-import { RADAR_DATA_INTERNAL } from '../constants';
+import { INTERNAL_DATA, EXTERNAL_DATA } from '../constants';
 
 export const Results: React.FC = () => {
   return (
     <section className="py-16 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">State-of-the-Art Performance</h2>
         <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-          Medical SAM3 demonstrates consistent and significant performance gains across organs, imaging modalities, and dimensionalities compared to the vanilla SAM3 baseline.
+          Medical SAM3 demonstrates superior generalization and promptable segmentation capabilities across both internal and external validation benchmarks.
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Chart Wrapper */}
-          <div className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 h-[400px] flex flex-col">
-            <h3 className="text-lg font-semibold text-center text-gray-700 mb-4">Internal Validation (Dice Score %)</h3>
-            <div className="flex-1 w-full min-h-0">
-              <ResponsiveContainer width="100%" height="100%">
-                <RadarChart cx="50%" cy="50%" outerRadius="70%" data={RADAR_DATA_INTERNAL}>
-                  <PolarGrid stroke="#e5e7eb" />
-                  <PolarAngleAxis dataKey="subject" tick={{ fill: '#4b5563', fontSize: 10 }} />
-                  <PolarRadiusAxis angle={30} domain={[0, 100]} tick={{ fill: '#9ca3af', fontSize: 10 }} />
-                  
-                  <Radar
-                    name="SAM 3"
-                    dataKey="SAM3"
-                    stroke="#94a3b8"
-                    strokeWidth={2}
-                    fill="#94a3b8"
-                    fillOpacity={0.1}
-                  />
-                  <Radar
-                    name="Medical SAM3 (Ours)"
-                    dataKey="MedicalSAM3"
-                    stroke="#0ea5e9"
-                    strokeWidth={3}
-                    fill="#0ea5e9"
-                    fillOpacity={0.4}
-                  />
-                  <Legend />
-                  <Tooltip 
-                    contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }}
-                  />
-                </RadarChart>
-              </ResponsiveContainer>
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+
+          {/* LEFT COLUMN: CHARTS (Takes up 3/5 width) */}
+          <div className="lg:col-span-3 grid grid-cols-1 gap-8">
+
+            {/* Chart 1: Internal Validation */}
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center">
+              <h3 className="text-lg font-semibold text-gray-800 mb-2 flex items-center self-start">
+                 <span className="w-2 h-8 bg-indigo-500 rounded mr-3"></span>
+                 Internal Validation Tasks
+              </h3>
+              <div className="h-[400px] w-full">
+                <ResponsiveContainer width="100%" height="100%">
+                  <RadarChart cx="50%" cy="50%" outerRadius="80%" data={INTERNAL_DATA}>
+                    <PolarGrid stroke="#e2e8f0" />
+                    <PolarAngleAxis dataKey="subject" tick={{ fill: '#64748b', fontSize: 11 }} />
+                    <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
+                    <Radar
+                      name="SAM 3"
+                      dataKey="SAM3"
+                      stroke="#94a3b8"
+                      strokeWidth={2}
+                      fill="#cbd5e1"
+                      fillOpacity={0.4}
+                    />
+                    <Radar
+                      name="Medical SAM3"
+                      dataKey="MedicalSAM3"
+                      stroke="#4f46e5"
+                      strokeWidth={3}
+                      fill="#6366f1"
+                      fillOpacity={0.5}
+                    />
+                    <Legend />
+                    <Tooltip
+                      contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }}
+                      itemStyle={{ color: '#334155' }}
+                    />
+                  </RadarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+
+            {/* Chart 2: External Validation */}
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center">
+              <h3 className="text-lg font-semibold text-gray-800 mb-2 flex items-center self-start">
+                <span className="w-2 h-8 bg-brand-600 rounded mr-3"></span>
+                External Validation Tasks
+              </h3>
+              <div className="h-[350px] w-full">
+                <ResponsiveContainer width="100%" height="100%">
+                  <RadarChart cx="50%" cy="50%" outerRadius="75%" data={EXTERNAL_DATA}>
+                    <PolarGrid stroke="#e2e8f0" />
+                    <PolarAngleAxis dataKey="subject" tick={{ fill: '#64748b', fontSize: 12 }} />
+                    <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
+                    <Radar
+                      name="SAM 3"
+                      dataKey="SAM3"
+                      stroke="#94a3b8"
+                      strokeWidth={2}
+                      fill="#cbd5e1"
+                      fillOpacity={0.4}
+                    />
+                    <Radar
+                      name="Medical SAM3"
+                      dataKey="MedicalSAM3"
+                      stroke="#0284c7"
+                      strokeWidth={3}
+                      fill="#0ea5e9"
+                      fillOpacity={0.5}
+                    />
+                    <Legend />
+                    <Tooltip
+                      contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }}
+                      itemStyle={{ color: '#334155' }}
+                    />
+                  </RadarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+
+          </div>
+
+          {/* RIGHT COLUMN: SUMMARY (Takes up 2/5 width) */}
+          <div className="lg:col-span-2 space-y-6 sticky top-8">
+            <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Performance Summary</h3>
+
+              <div className="space-y-6">
+                <div>
+                  <h4 className="font-semibold text-brand-700 mb-2">Significant External Generalization</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    On 7 external datasets (TN3K, HC18, CVC, ETIS, PH2, CHASE, STARE) which were unseen during training, Medical SAM3 achieves superior segmentation accuracy, significantly outperforming the vanilla SAM3 baseline. The blue area in the radar chart demonstrates the model's robust zero-shot transfer capabilities across different domains.
+                  </p>
+                </div>
+
+                <div className="border-t border-gray-100 pt-4">
+                  <h4 className="font-semibold text-indigo-700 mb-2">Comprehensive Internal Mastery</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Across 10 diverse internal validation tasks spanning various modalities (Retina, Pathology, Ultrasound, etc.), Medical SAM3 (purple area) consistently covers a larger area than SAM3, indicating a comprehensive improvement in domain-specific medical understanding.
+                  </p>
+                </div>
+
+                <div className="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                  <div className="text-xs text-gray-500 uppercase tracking-wide font-semibold mb-3">Improvement Overview (Avg. Dice)</div>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-gray-700 text-sm">External Tasks</span>
+                    <span className="font-bold text-brand-600">11.9% → 73.9%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4">
+                    <div className="bg-brand-600 h-1.5 rounded-full" style={{ width: '74%' }}></div>
+                  </div>
+
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-gray-700 text-sm">Internal Tasks</span>
+                    <span className="font-bold text-indigo-600">54.0% → 77.0%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-1.5">
+                    <div className="bg-indigo-600 h-1.5 rounded-full" style={{ width: '77%' }}></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-4 rounded-xl bg-blue-50 border border-blue-100 text-blue-900 text-sm italic">
+              "The radar charts highlight Medical SAM3's capability to maintain high performance across varied medical imaging tasks, eliminating the 'performance collapse' often seen in general-purpose models."
             </div>
           </div>
 
-          {/* Key Metrics Text */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Substantial Gains on Medical Data</h3>
-              <p className="text-gray-600">
-                On internal validation tasks, Medical SAM3 improves average Dice score from <strong>54.0% to 77.0%</strong> (+23.0%). 
-                The improvements are even more striking on external validation sets, jumping from <strong>11.9% to 73.9%</strong>.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-               <div className="p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
-                  <div className="text-sm text-gray-500 mb-1">Internal Dice Avg</div>
-                  <div className="flex items-end gap-2">
-                    <span className="text-3xl font-bold text-brand-600">77.0%</span>
-                    <span className="text-sm text-green-600 font-medium mb-1">↑ 23.0%</span>
-                  </div>
-                  <div className="text-xs text-gray-400 mt-1">vs 54.0% (SAM3)</div>
-               </div>
-               <div className="p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
-                  <div className="text-sm text-gray-500 mb-1">External Dice Avg</div>
-                  <div className="flex items-end gap-2">
-                    <span className="text-3xl font-bold text-brand-600">73.9%</span>
-                    <span className="text-sm text-green-600 font-medium mb-1">↑ 62.0%</span>
-                  </div>
-                  <div className="text-xs text-gray-400 mt-1">vs 11.9% (SAM3)</div>
-               </div>
-            </div>
-
-            <p className="text-sm text-gray-500 italic">
-              "The most striking recovery occurs in endoscopic polyp segmentation (CVC and ETIS), where the baseline SAM3 suffers catastrophic failure due to weak text-visual alignment; in contrast, Medical SAM3 successfully grounds the target."
-            </p>
-          </div>
         </div>
       </div>
     </section>
