@@ -33,8 +33,8 @@ export const IMAGES = {
   // RECOMMENDED: Use SVG files for best quality.
   // Example: "./assets/teaser.svg" OR "./assets/method.pdf"
   // If using PDF, the app will automatically detect the .pdf extension and embed it differently.
-  teaser: "https://picsum.photos/seed/teaser/800/400",
-  methodology: "https://picsum.photos/seed/methodology/1200/600",
+  teaser: "/MedicalSAM3/overview.svg",
+  methodology: "/MedicalSAM3/method.svg",
 };
 
 // Data for Interactive Visuals Comparison
