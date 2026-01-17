@@ -30,9 +30,12 @@ export const AFFILIATIONS = [
 ];
 
 export const IMAGES = {
-  // This 'teaser' image will now be displayed at the very top of the page (before the title).
-  // Replace this URL with your project's overview diagram or main banner.
+  // Use your project overview/teaser image here
   teaser: "/MedicalSAM3/overview.png",
+
+  // PLACEHOLDER: Replace this URL with the actual path to your qualitative comparison figure (e.g., "/assets/figure4.png")
+  qualitativeComparison: "/MedicalSAM3/result.png",
+
   visuals: {
     row1: "https://picsum.photos/seed/v1/200",
     row2: "https://picsum.photos/seed/v2/200",
