@@ -62,7 +62,7 @@ export const Results: React.FC = () => {
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center overflow-hidden relative">
               <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center self-start z-10 relative">
                  <span className="w-2 h-8 bg-indigo-500 rounded mr-3"></span>
-                 Internal Validation <span className="text-gray-400 text-lg font-normal ml-2">({metric === 'dice' ? 'Dice' : 'IoU'})</span>
+                 Internal Validation
               </h3>
               <div className="h-[400px] w-full transition-transform duration-500 ease-in-out hover:scale-105 cursor-pointer origin-center">
                 <ResponsiveContainer width="100%" height="100%">
@@ -100,7 +100,7 @@ export const Results: React.FC = () => {
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center overflow-hidden relative">
               <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center self-start z-10 relative">
                 <span className="w-2 h-8 bg-brand-600 rounded mr-3"></span>
-                External Validation <span className="text-gray-400 text-lg font-normal ml-2">({metric === 'dice' ? 'Dice' : 'IoU'})</span>
+                External Validation
               </h3>
               <div className="h-[350px] w-full transition-transform duration-500 ease-in-out hover:scale-105 cursor-pointer origin-center">
                 <ResponsiveContainer width="100%" height="100%">
