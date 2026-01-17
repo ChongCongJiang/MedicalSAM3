@@ -10,7 +10,7 @@ export const Hero: React.FC = () => {
         <img
           src={IMAGES.teaser}
           alt="Project Overview"
-          className="rounded-xl shadow-sm border border-gray-100 w-full h-auto object-contain"
+          className="rounded-xl shadow-sm border border-gray-100 w-full h-auto object-contain transition-all duration-500 ease-in-out transform hover:scale-105 hover:shadow-2xl cursor-pointer"
         />
       </div>
 
