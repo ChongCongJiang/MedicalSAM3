@@ -14,12 +14,12 @@ export const Results: React.FC = () => {
           <div className="lg:col-span-3 grid grid-cols-1 gap-8">
 
             {/* Chart 1: Internal Validation */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center overflow-hidden">
-              <h3 className="text-lg font-semibold text-gray-800 mb-2 flex items-center self-start z-10 relative">
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center overflow-hidden">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center self-start z-10 relative">
                  <span className="w-2 h-8 bg-indigo-500 rounded mr-3"></span>
-                 Internal Validation Tasks
+                 Internal Validation
               </h3>
-              <div className="h-[400px] w-full transition-transform duration-500 ease-in-out hover:scale-110 cursor-pointer origin-center">
+              <div className="h-[400px] w-full transition-transform duration-500 ease-in-out hover:scale-105 cursor-pointer origin-center">
                 <ResponsiveContainer width="100%" height="100%">
                   <RadarChart cx="50%" cy="50%" outerRadius="80%" data={INTERNAL_DATA}>
                     <PolarGrid stroke="#e2e8f0" />
@@ -52,12 +52,12 @@ export const Results: React.FC = () => {
             </div>
 
             {/* Chart 2: External Validation */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center overflow-hidden">
-              <h3 className="text-lg font-semibold text-gray-800 mb-2 flex items-center self-start z-10 relative">
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center overflow-hidden">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center self-start z-10 relative">
                 <span className="w-2 h-8 bg-brand-600 rounded mr-3"></span>
-                External Validation Tasks
+                External Validation
               </h3>
-              <div className="h-[350px] w-full transition-transform duration-500 ease-in-out hover:scale-110 cursor-pointer origin-center">
+              <div className="h-[350px] w-full transition-transform duration-500 ease-in-out hover:scale-105 cursor-pointer origin-center">
                 <ResponsiveContainer width="100%" height="100%">
                   <RadarChart cx="50%" cy="50%" outerRadius="75%" data={EXTERNAL_DATA}>
                     <PolarGrid stroke="#e2e8f0" />
@@ -94,7 +94,10 @@ export const Results: React.FC = () => {
           {/* RIGHT COLUMN: SUMMARY (Takes up 2/5 width) */}
           <div className="lg:col-span-2 space-y-8 sticky top-8">
             <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Performance Summary</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <span className="w-2 h-8 bg-gray-900 rounded mr-3"></span>
+                Performance Summary
+              </h3>
 
               <div className="space-y-8">
                 <div>
