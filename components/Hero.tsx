@@ -76,6 +76,8 @@ export const Hero: React.FC = () => {
         <div className="flex justify-center gap-4 flex-wrap">
           <a
             href={LINKS.paper}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-md text-white bg-gray-900 hover:bg-gray-800 hover:-translate-y-0.5 transition-all"
           >
             <FileText className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
@@ -83,6 +85,8 @@ export const Hero: React.FC = () => {
           </a>
           <a
             href={LINKS.code}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-md text-white bg-brand-600 hover:bg-brand-700 hover:-translate-y-0.5 transition-all"
           >
             <Github className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
@@ -90,6 +94,8 @@ export const Hero: React.FC = () => {
           </a>
           <a
             href={LINKS.demo}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-md text-white bg-indigo-600 hover:bg-indigo-700 hover:-translate-y-0.5 transition-all"
           >
             <Wand2 className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />

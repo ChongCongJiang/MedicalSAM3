@@ -157,7 +157,7 @@ export const EXTERNAL_DATA_IOU: MetricData[] = [
 ];
 
 export const LINKS = {
-  paper: "#", // Replace with Arxiv link
+  paper: "https://arxiv.org/abs/2601.10880",
   code: "https://github.com/AIM-Research-Lab/Medical-SAM3",
   demo: "#", // Replace with HuggingFace/Colab demo link if available
 };
@@ -165,6 +165,7 @@ export const LINKS = {
 export const BIBTEX = `@article{jiang2026medicalsam3,
   title={Medical SAM3: A Foundation Model for Universal Prompt-Driven Medical Image Segmentation},
   author={Jiang, Chongcong and Ding, Tianxingjian and Song, Chuhan and Tu, Jiachen and Yan, Ziyang and Shao, Yihua and Wang, Zhenyi and Shang, Yuzhang and Han, Tianyu and Tian, Yu},
-  journal={arXiv preprint},
-  year={2026}
+  journal={arXiv preprint arXiv:2601.10880},
+  year={2026},
+  url={https://arxiv.org/abs/2601.10880}
 }`;

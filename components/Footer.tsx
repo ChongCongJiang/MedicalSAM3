@@ -12,11 +12,11 @@ export const Footer: React.FC = () => {
           The code and model weights are available for research purposes.
         </p>
         <div className="mt-4">
-           <a href={LINKS.paper} className="text-brand-600 hover:underline mx-2">Paper</a>
+           <a href={LINKS.paper} target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline mx-2">Paper</a>
            &bull;
-           <a href={LINKS.code} className="text-brand-600 hover:underline mx-2">Code</a>
+           <a href={LINKS.code} target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline mx-2">Code</a>
            &bull;
-           <a href={LINKS.demo} className="text-brand-600 hover:underline mx-2">Demo</a>
+           <a href={LINKS.demo} target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline mx-2">Demo</a>
         </div>
       </div>
     </footer>
